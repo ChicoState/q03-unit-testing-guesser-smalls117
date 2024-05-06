@@ -51,6 +51,7 @@ bool Guesser::match(string guess){
   reset to three (3).
 */
 unsigned int Guesser::remaining(){
+  int guesses = 3;
   return 0;
 }
 

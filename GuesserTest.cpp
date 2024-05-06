@@ -20,3 +20,26 @@ TEST(GuesserTest, smoke_test)
     ASSERT_EQ( 1+1, 2 );
 }
 */
+
+TEST(GuesserTest, rightGuess) {
+	Guesser my_guess("hat");
+	bool guess = my_guess.match("hat");
+	ASSERT_EQ(true, guess);
+}
+
+TEST(GuesserTest, wrongGuess) {
+	Guesser my_guess("Hello");
+	bool guess = my_guess.match("power");
+	ASSERT_EQ(false, guess);
+}
+
+TEST(GuesserTest, longGuess) {
+	Guesser my_guess("lamp post");
+	ASSERT_EQ(false, my_guess.match("lamp"));
+}
+
+TEST(GuesserTest, shotGuess) {
+	Guesser my_guess("money");
+	ASSERT_EQ(false, my_guess.match("money doesn't grow on trees"));
+}
+docker build -t cpp-container .
