@@ -42,4 +42,3 @@ TEST(GuesserTest, shotGuess) {
 	Guesser my_guess("money");
 	ASSERT_EQ(false, my_guess.match("money doesn't grow on trees"));
 }
-docker build -t cpp-container .
